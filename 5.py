@@ -13,10 +13,9 @@ def cons(a, b):
     return pair
 Implement car and cdr.
 '''
-
+'''
 def cons(a, b):
     return (a,b)
-
 
 def car(pair):
     a,_=pair
@@ -25,7 +24,16 @@ def car(pair):
 def cdr(pair):
     _,b=pair
     return b
+'''
 
+def cons(a,b):
+    return lambda f: f(a,b)
+
+def car(f):
+    return f(lambda a,b : a)
+
+def cdr(f):
+    return f(lambda a,b : b)
 
 if __name__=="__main__":
     a,b=1,2
