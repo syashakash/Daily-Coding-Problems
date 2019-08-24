@@ -1,4 +1,5 @@
 '''
+22 08 2019
 This problem was asked by Stripe.
 
 Given an array of integers, find the first missing positive integer in 

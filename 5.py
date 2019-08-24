@@ -1,4 +1,5 @@
 '''
+23 08 2019
 This problem was asked by Jane Street.
 
 cons(a, b) constructs a pair, and car(pair) and cdr(pair) returns the first and last element of that pair. 

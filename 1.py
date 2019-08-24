@@ -1,5 +1,5 @@
 '''
-Good morning! Here's your coding interview problem for today.
+19 08 2019
 
 This problem was recently asked by Google.
 
