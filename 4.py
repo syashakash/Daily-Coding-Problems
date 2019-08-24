@@ -13,30 +13,23 @@ You can modify the input array in-place.
 '''
 
 def findSmallestPositive(alist):
-    hasZero=False
-    hasPositive=False
+    def segregate(alist):
+        i,j=0,0
+        while j < len(alist):
+            if alist[j] <= 0:
+                alist[i],alist[j]=alist[j],alist[i]
+                i+=1
+            j+=1
+        return i
+    shift = segregate(alist)
+    alist=alist[shift:]
     for i in range(len(alist)):
-        if alist[i] == 0:
-            hasZero=True
-        if alist[i] > 0 and alist[i] <= len(alist):
-            hasPositive=True
-            if alist[alist[i]-1] == 0:
-                hasZero=True
-            alist[alist[i]-1]=-alist[i]
-    ans=1 and alist[alist[i]-1]>0
-    if not hasPositive:
-        return ans
-    found = False
+        if abs(alist[i]) -1 < len(alist) and alist[abs(alist[i])-1] > 0:
+            alist[abs(alist[i])-1]=-alist[abs(alist[i])-1]
     for i in range(len(alist)):
         if alist[i] > 0:
-            ans=i+1
-            found=True
-            break
-    if not found and hasZero:
-        ans=len(alist)
-    elif not found:
-        ans=len(alist)+1
-    return ans
+            return i+1
+    return len(alist)+1
 
 if __name__ == "__main__":
     t = int(input("Enter no. of testcases : "))
