@@ -1,4 +1,5 @@
 '''
+27 08 2019
 This problem was asked by Airbnb.
 
 Given a list of integers, write a function that returns the 
